@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Export Customer Email
  * Plugin URI: https://github.com/mhmithu/woocommerce-export-customer-email
  * Description: Allows you to export all customer emails into a CSV file.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: MH Mithu
  * Author URI: http://mithu.me/
  * License: GNU General Public License v3.0
@@ -60,7 +60,7 @@ if ( is_plugin_active('woocommerce/woocommerce.php' ) ) {
                 $sitename = sanitize_key( get_bloginfo( 'name' ) );
                 if ( ! empty( $sitename ) )
                     $sitename .= '.';
-                $filename = $sitename . date( 'ymdHis', time() ) . '.csv';
+                $filename = $sitename . date( 'ymdHis', current_time('timestamp') ) . '.csv';
 
                 header( 'Content-Description: File Transfer' );
                 header( 'Content-Disposition: attachment; filename=' . $filename );
